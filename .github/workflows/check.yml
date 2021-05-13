@@ -17,7 +17,7 @@ jobs:
     - name: Install Scoop
       run: |
         Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-        echo "$env:SCOOP\apps\scoop\current\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+        echo "$env:SCOOP\shims" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
     - name: Check Urls
       run: .\bin\checkurls.ps1
