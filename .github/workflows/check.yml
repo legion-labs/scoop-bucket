@@ -1,0 +1,19 @@
+name: Check versions and urls
+on: 
+  push:
+  pull_request:
+  schedule:
+  - cron: "0 */6 * * *"
+
+jobs:
+  check:
+    name: Check Urls and Versions
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Scoop
+      run: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+    - name: Check Urls
+      run: .\bin\checkurls.ps1
+    - name: Check Versions
+      run: .\bin\checkver.ps1
