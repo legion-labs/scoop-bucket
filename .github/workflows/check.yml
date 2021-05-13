@@ -10,7 +10,7 @@ jobs:
     name: Check Urls and Versions
     runs-on: windows-latest
     env:
-    - SCOOP: C:\Scoop\user
+      SCOOP: 'C:\Scoop\user'
     steps:
     - uses: actions/checkout@v2
 
