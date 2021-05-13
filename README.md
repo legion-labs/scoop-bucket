@@ -15,6 +15,25 @@ Add bucket using:
 scoop bucket add legionlabs https://github.com/legionlabs/scoop-bucket
 ```
 
+### How to update
+
+Some packages need manual updates for now, if the frequency of update is too high we're going to automate it.
+
+#### winsdk and vs_buildtools
+
+Both those packages rely on winget manifest definition to get the executables at the right version since the executables are addressed using their hash rather than the version scheme.
+
+For winsdk look in for the folder with the higher version in [this location](https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/WindowsSDK), for vs_buildtools look [here](https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/VisualStudio/BuildTools)
+
+After you identify the proper folder, open the yaml file it contains.
+| Value in winget manifest          | Corresponding in scoop manifest   |
+|-----------------------------------|-----------------------------------|
+| PackageVersion                    | version                           |
+| Installers[0].InstallerUrl        | architecture.64bit.url            |
+| Installers[0].InstallerSha256     | architecture.64bit.hash           |
+
+In case there is a major version bump you might need to pay attention to the parameters used un the `Custom` field.
+
 ### License
 
 Legion Labs projects are dual-licensed under Apache 2.0 and MIT terms.
