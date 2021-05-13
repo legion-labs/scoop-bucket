@@ -1,0 +1,52 @@
+{
+    "version": "10.0.19041.0",
+    "description": "Docker Desktop. Open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.",
+    "homepage": "https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk/",
+    "license": "Copyright (c) Microsoft Corporation. All rights reserved.",
+    "notes": [
+        "Using /installpath doesn't 100% contain the installation",
+        "",
+        "You'll need to restart your computer once the installation completes"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/m/Microsoft/WindowsSDK?ref=master",
+        "jp": "$.[-1:].name"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://download.microsoft.com/download/4/d/2/4d2b7011-606a-467e-99b4-99550bf24ffc/windowssdk/winsdksetup.exe",
+            "hash": "42D2774274D1135FC598C180C2ACBF2321EB4192F59E511E6AC7772870BF6DE1",
+            "installer": {
+                "args": [
+                    "/q",
+                    "/norestart",
+                    "/features",
+                    "OptionId.WindowsPerformanceToolkit",
+                    "OptionId.WindowsDesktopDebuggers",
+                    "OptionId.AvrfExternal",
+                    "OptionId.WindowsSoftwareLogoToolkit",
+                    "OptionId.IpOverUsb",
+                    "OptionId.MSIInstallTools",
+                    "OptionId.SigningTools",
+                    "OptionId.UWPManaged",
+                    "OptionId.UWPCPP",
+                    "OptionId.UWPLocalized",
+                    "OptionId.DesktopCPPx86",
+                    "OptionId.DesktopCPPx64",
+                    "OptionId.DesktopCPParm",
+                    "OptionId.DesktopCPParm64",
+                    "/installpath", 
+                    "$dir\\sdk"
+                ],
+                "keep": true
+            },
+            "uninstaller": {
+                "file": "winsdksetup.exe",
+                "args": [
+                    "/uninstall",
+                    "/q"
+                ]
+            }
+        }
+    }
+}
