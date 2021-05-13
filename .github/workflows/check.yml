@@ -9,11 +9,18 @@ jobs:
   check:
     name: Check Urls and Versions
     runs-on: windows-latest
+    env:
+    - SCOOP: C:\Scoop\user
     steps:
     - uses: actions/checkout@v2
+
     - name: Install Scoop
-      run: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+      run: |
+        Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+        echo "$env:SCOOP\apps\scoop\current\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
     - name: Check Urls
       run: .\bin\checkurls.ps1
+
     - name: Check Versions
       run: .\bin\checkver.ps1
