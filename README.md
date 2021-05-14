@@ -12,7 +12,7 @@ Contains dependencies not found in popular bucket or modified scripts of existin
 Add bucket using:
 
 ```powershell
-scoop bucket add legionlabs https://github.com/legion-labs/scoop-bucket
+scoop bucket add legion-labs https://github.com/legion-labs/scoop-bucket
 ```
 
 ### How to update
