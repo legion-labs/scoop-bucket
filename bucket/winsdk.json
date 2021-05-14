@@ -5,6 +5,8 @@
     "license": "Copyright (c) Microsoft Corporation. All rights reserved.",
     "notes": [
         "Using /installpath doesn't 100% contain the installation",
+        "OptionId.IpOverUsb default feature has been removed since incompatible with server core",
+        "The feature allows debugging UWP apps on phones...",
         "",
         "You'll need to restart your computer once the installation completes"
     ],
@@ -25,7 +27,6 @@
                     "OptionId.WindowsDesktopDebuggers",
                     "OptionId.AvrfExternal",
                     "OptionId.WindowsSoftwareLogoToolkit",
-                    "OptionId.IpOverUsb",
                     "OptionId.MSIInstallTools",
                     "OptionId.SigningTools",
                     "OptionId.UWPManaged",
