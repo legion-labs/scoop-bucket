@@ -21,18 +21,22 @@ jobs:
 
     - name: Check Urls
       run: |
+        # Scripts are using Write-Host making them tricky to handle
+        # Running once for the logs, once for error handling
+        .\bin\checkurls.ps1
         .\bin\checkurls.ps1 6> results.txt
         $error_string = Select-String -Path results.txt -Pattern "error"
         if ($error_string -ne $null) {
-            .\bin\checkurls.ps1
             Exit 1
         }
     - name: Check Versions
       run: |
+        # Scripts are using Write-Host making them tricky to handle
+        # Running once for the logs, once for error handling
+        .\bin\checkver.ps1
         .\bin\checkver.ps1 6> results.txt
-        $error_string = Select-String -Path results.txt -Pattern "scoop version is"
+        $error_string = Select-String -Path results.txt -Pattern "(scoop version is|error)"
         if ($error_string -ne $null) {
             .\bin\checkver.ps1
             Exit 1
         }
-
