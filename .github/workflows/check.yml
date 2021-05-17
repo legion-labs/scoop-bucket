@@ -37,6 +37,5 @@ jobs:
         .\bin\checkver.ps1 6> results.txt
         $error_string = Select-String -Path results.txt -Pattern "(scoop version is|error)"
         if ($error_string -ne $null) {
-            .\bin\checkver.ps1
             Exit 1
         }
