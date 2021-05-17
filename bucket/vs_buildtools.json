@@ -14,7 +14,7 @@
     ],
     "depends": "winsdk",
     "checkver": {
-        "url": "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/m/Microsoft/VisualStudio/BuildTools?ref=master",
+        "url": "https://api.github.com/repos/microsoft/winget-pkgs/contents/manifests/m/Microsoft/VisualStudio/2019/BuildTools?ref=master",
         "jp": "$.[-1:].name"
     },
     "architecture": {
