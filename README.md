@@ -23,7 +23,7 @@ Some packages need manual updates for now, if the frequency of update is too hig
 
 Both those packages rely on winget manifest definition to get the executables at the right version since the executables are addressed using their hash rather than the version scheme.
 
-For winsdk look in for the folder with the higher version in [this location](https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/WindowsSDK), for vs_buildtools look [here](https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/VisualStudio/BuildTools)
+For winsdk look in for the folder with the higher version in [this location](https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/WindowsSDK), for vs_buildtools look [here](https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/Microsoft/VisualStudio/2019/BuildTools)
 
 After you identify the proper folder, open the yaml file it contains.
 | Value in winget manifest          | Corresponding in scoop manifest   |
