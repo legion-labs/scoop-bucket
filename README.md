@@ -8,6 +8,7 @@ Contains dependencies not found in popular bucket or modified scripts of existin
 |--------------------------------------------|-----------------------------------|---------------------------------------------|
 | [winsdk](bucket/winsdk.json)               | Windows 10 SDK                    | `sudo scoop install winsdk --global`        |
 | [vs_buildtools](bucket/vs_buildtools.json) | Visual Studio Build Tools         | `sudo scoop install vs_buildtools --global` |
+| [llvm](bucket/llvm.json)                   | LLVM Toolchain                    | `sudo scoop install legion-labs/llvm`       |
 
 Add bucket using:
 
