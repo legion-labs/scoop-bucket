@@ -4,11 +4,11 @@ Contains dependencies not found in popular bucket or modified scripts of existin
 
 > Visual Studio Build Tools and the Windows SDK don't support local install and they will prompt for elevation anyways. Run `scoop install sudo` prior to installing them and use the global flag as well for consistency.
 
-| App                                        | Description                       | Install Command                             |
-|--------------------------------------------|-----------------------------------|---------------------------------------------|
-| [winsdk](bucket/winsdk.json)               | Windows 10 SDK                    | `sudo scoop install winsdk --global`        |
-| [vs_buildtools](bucket/vs_buildtools.json) | Visual Studio Build Tools         | `sudo scoop install vs_buildtools --global` |
-| [llvm](bucket/llvm.json)                   | LLVM Toolchain                    | `sudo scoop install legion-labs/llvm`       |
+| App                                        | Description                       | Install Command                                         |
+|--------------------------------------------|-----------------------------------|---------------------------------------------------------|
+| [winsdk](bucket/winsdk.json)               | Windows 10 SDK                    | `sudo scoop install legion-labs/winsdk --global`        |
+| [vs_buildtools](bucket/vs_buildtools.json) | Visual Studio Build Tools         | `sudo scoop install legion-labs/vs_buildtools --global` |
+| [llvm](bucket/llvm.json)                   | LLVM Toolchain                    | `scoop install legion-labs/llvm`                        |
 
 Add bucket using:
 
