@@ -13,30 +13,19 @@
     "url": "https://sdk.lunarg.com/sdk/download/1.2.189.2/windows/VulkanSDK-1.2.189.2-Installer.exe#/dl.7z",
     "hash": "43ef1f8362f827c6db0d5aceb70652835180ceded9183a3a1103e5e2c8e58b50",
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstal*\" -Recurse",
-    "architecture": {
-        "64bit": {
-            "env_add_path": [
-                "Bin",
-                "Tools"
-            ],
-            "env_set": {
-                "VK_LAYER_PATH": "$dir\\Bin",
-                "VULKAN_SDK": "$dir",
-                "VK_SDK_PATH": "$dir"
-            }
-        },
-        "32bit": {
-            "env_add_path": [
-                "Bin32",
-                "Tools32"
-            ],
-            "env_set": {
-                "VK_LAYER_PATH": "$dir\\Bin32",
-                "VULKAN_SDK": "$dir",
-                "VK_SDK_PATH": "$dir"
-            }
-        }
+    "env_add_path": [
+        "Bin",
+        "Tools"
+    ],
+    "env_set": {
+        "VULKAN_SDK": "$dir",
+        "VK_SDK_PATH": "$dir"
     },
+    "post_install": [
+        "if (Test-Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\") { Remove-Item -Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" -Force }",
+        "New-Item -Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" -Force",
+        "Get-ChildItem -Path \"$dir\\Bin\" -Filter VkLayer_*.json -File -Name | ForEach-Object { New-ItemProperty -Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" -Name \"$dir\\Bin\\$_\" -PropertyType \"DWORD\" -Value \"0\" }"
+    ],
     "checkver": {
         "url": "https://vulkan.lunarg.com/sdk/latest/windows.json",
         "jsonpath": "$.windows"
