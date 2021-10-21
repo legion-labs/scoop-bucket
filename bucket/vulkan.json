@@ -23,7 +23,7 @@
     },
     "post_install": [
         "$reg_location=\"HKCU:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\"",
-        "if ($global) { $reg_location=\"KHLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" }",
+        "if ($global) { $reg_location=\"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" }",
         "if (Test-Path \"$reg_location\") { Remove-Item -Path \"$reg_location\" -Force }",
         "New-Item -Path \"$reg_location\" -Force",
         "Get-ChildItem -Path \"$dir\\Bin\" -Filter VkLayer_*.json -File -Name | ForEach-Object {",
@@ -33,7 +33,7 @@
     "uninstaller": {
         "script": [
             "$reg_location=\"HKCU:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\"",
-            "if ($global) { $reg_location=\"KHLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" }",
+            "if ($global) { $reg_location=\"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" }",
             "if (Test-Path \"$reg_location\") { Remove-Item -Path \"$reg_location\" -Force }"
         ]
     },
