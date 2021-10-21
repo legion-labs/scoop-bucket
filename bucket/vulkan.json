@@ -22,10 +22,21 @@
         "VK_SDK_PATH": "$dir"
     },
     "post_install": [
-        "if (Test-Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\") { Remove-Item -Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" -Force }",
-        "New-Item -Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" -Force",
-        "Get-ChildItem -Path \"$dir\\Bin\" -Filter VkLayer_*.json -File -Name | ForEach-Object { New-ItemProperty -Path \"HKLM:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" -Name \"$dir\\Bin\\$_\" -PropertyType \"DWORD\" -Value \"0\" }"
+        "$reg_location=\"HKCU:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\"",
+        "if ($global) { $reg_location=\"HKCU:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" }",
+        "if (Test-Path \"$reg_location\") { Remove-Item -Path \"$reg_location\" -Force }",
+        "New-Item -Path \"$reg_location\" -Force",
+        "Get-ChildItem -Path \"$dir\\Bin\" -Filter VkLayer_*.json -File -Name | ForEach-Object {",
+        "    New-ItemProperty -Path \"$reg_location\" -Name \"$dir\\Bin\\$_\" -PropertyType \"DWORD\" -Value \"0\"",
+        "}"
     ],
+    "uninstaller": {
+        "script": [
+            "$reg_location=\"HKCU:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\"",
+            "if ($global) { $reg_location=\"HKCU:\\SOFTWARE\\Khronos\\Vulkan\\ExplicitLayers\" }",
+            "if (Test-Path \"$reg_location\") { Remove-Item -Path \"$reg_location\" -Force }"
+        ]
+    },
     "checkver": {
         "url": "https://vulkan.lunarg.com/sdk/latest/windows.json",
         "jsonpath": "$.windows"
