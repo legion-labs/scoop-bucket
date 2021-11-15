@@ -1,5 +1,5 @@
 {
-    "version": "16.11.5",
+    "version": "16.11.6",
     "description": "Visual Studio Build Tools enable a streamlined build-lab experience for getting the required Visual C++ tools without the additional overhead of installing the Visual Studio IDE",
     "homepage": "https://visualstudio.microsoft.com/",
     "license": {
@@ -19,8 +19,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://download.visualstudio.microsoft.com/download/pr/5a50b8ac-2c22-47f1-ba60-70d4257a78fa/4e0f5197da02b62b9fa48f05b55f2e206265785a6f0bab7235ef88fbdbe49e5e/vs_BuildTools.exe",
-            "hash": "4E0F5197DA02B62B9FA48F05B55F2E206265785A6F0BAB7235EF88FBDBE49E5E",
+            "url": "https://download.visualstudio.microsoft.com/download/pr/f1e43525-cd53-4012-9644-d7846e2c4963/9eb84f3bf5695fd108713fb15b827fe3755fc7c9ea3fa78eb83ed40015fd866b/vs_BuildTools.exe",
+            "hash": "9EB84F3BF5695FD108713FB15B827FE3755FC7C9EA3FA78EB83ED40015FD866B",
             "installer": {
                 "args": [
                     "--wait",
