@@ -11,7 +11,7 @@
         "Variety of drivers of different graphic card vendors could be found at the bottom of 'https://www.khronos.org/vulkan/'"
     ],
     "url": "https://sdk.lunarg.com/sdk/download/1.2.198.0/windows/VulkanSDK-1.2.198.0-Installer.exe#/dl.7z",
-    "hash": "43ef1f8362f827c6db0d5aceb70652835180ceded9183a3a1103e5e2c8e58b50",
+    "hash": "67492fc45c7e74e493be1aa8514e1315a92f6b8458d8b455c8d5426b67675e73",
     "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstal*\" -Recurse",
     "env_add_path": [
         "Bin",
