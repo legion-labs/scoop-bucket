@@ -5,8 +5,8 @@
     "license": "Copyright (c) Microsoft Corporation. All rights reserved.",
     "architecture": {
         "64bit": {
-            "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/e62c6b6b-b6a8-4c0e-9010-2f1306b5e31c/MicrosoftEdgeWebView2RuntimeInstallerX64.exe",
-            "hash": "5AD2DD2F3BBBEC9B62ACC9518056B633755B289430FA58E09786233B3FCE594C",
+            "url": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/3717aef3-49b0-4c74-bf9c-8beee165346a/MicrosoftEdgeWebView2RuntimeInstallerX64.exe",
+            "hash": "5ABB7415FC870BC1D9C08B4D08BC1416889DFD798721BED7B5201CEFF0276485",
             "installer": {
                 "args": [
                     "/install"
