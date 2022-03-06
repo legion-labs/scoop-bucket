@@ -1,8 +1,8 @@
 {
     "version": "0.6.0",
-    "description": "Create and manage infrastructure as code using simple declarative configuration files.",
-    "homepage": "https://www.terraform.io",
-    "license": "MPL-2.0",
+    "description": "Simplifies the login flow for docker when interacting with ECR repos",
+    "homepage": "https://github.com/awslabs/amazon-ecr-credential-helper",
+    "license": "Apache 2.0",
     "architecture": {
         "64bit": {
             "url": "https://amazon-ecr-credential-helper-releases.s3.us-east-2.amazonaws.com/0.6.0/windows-amd64/docker-credential-ecr-login.exe",
