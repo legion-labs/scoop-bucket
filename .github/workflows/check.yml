@@ -16,7 +16,9 @@ jobs:
 
     - name: Install Scoop
       run: |
-        Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+        iwr get.scoop.sh -outfile 'install.ps1'
+        Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+        .\install.ps1 -RunAsAdmin
         echo "$env:SCOOP\shims" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
     - name: Check Urls
