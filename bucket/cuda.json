@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://developer.download.nvidia.com/compute/cuda/11.6.2/local_installers/cuda_11.6.2_511.65_windows.exe",
-            "hash": "md5:b5ca553bcf7e702a6bc454979aa87e65 "
+            "hash": "md5:b5ca553bcf7e702a6bc454979aa87e65"
         }
     },
     "installer": {
